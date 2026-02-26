@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FadeIn } from "@/components/FadeIn";
+import { basePath } from "@/lib/utils";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -54,7 +55,7 @@ export default function ContactPage() {
                 >
                   <div className="text-center">
                     <Image
-                      src="/images/logos/saola-symbol-orange.png"
+                      src={basePath("/images/logos/saola-symbol-orange.png")}
                       alt="Saola"
                       width={40}
                       height={40}

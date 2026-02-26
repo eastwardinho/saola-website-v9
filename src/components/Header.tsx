@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { basePath } from "@/lib/utils";
 
 const navLinks = [
   { href: "/collections/", label: "Collections" },
@@ -20,7 +21,7 @@ export function Header() {
       <nav className="editorial-container flex items-center justify-between h-20">
         <Link href="/" className="relative z-50">
           <Image
-            src="/images/logos/saola-wordmark-black.png"
+            src={basePath("/images/logos/saola-wordmark-black.png")}
             alt="Saola"
             width={120}
             height={32}

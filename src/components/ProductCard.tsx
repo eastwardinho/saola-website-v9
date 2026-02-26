@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Product } from "@/data/types";
+import { basePath } from "@/lib/utils";
 
 interface ProductCardProps {
   product: Product;
@@ -20,7 +21,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
     >
       <div className="relative aspect-[4/5] overflow-hidden bg-saola-cream mb-4">
         <Image
-          src={product.image}
+          src={basePath(product.image)}
           alt={product.name}
           fill
           className="object-cover transition-transform duration-700 group-hover:scale-105"

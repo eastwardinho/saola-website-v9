@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FadeIn } from "@/components/FadeIn";
+import { basePath } from "@/lib/utils";
 
 const tiers = [
   {
@@ -51,7 +52,7 @@ export default function CafeConceptPage() {
           <FadeIn>
             <div className="relative aspect-[21/9] overflow-hidden bg-saola-cream">
               <Image
-                src="/images/brand/page-24.png"
+                src={basePath("/images/brand/page-24.png")}
                 alt="Saola Cafe Concept"
                 fill
                 className="object-cover"

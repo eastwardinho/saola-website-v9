@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FadeIn } from "@/components/FadeIn";
+import { basePath } from "@/lib/utils";
 
 const values = [
   {
@@ -41,7 +42,7 @@ export default function AboutPage() {
             <FadeIn delay={0.2}>
               <div className="relative aspect-[3/4] overflow-hidden">
                 <Image
-                  src="/images/brand/page-21.png"
+                  src={basePath("/images/brand/page-21.png")}
                   alt="Saola Brand Story"
                   fill
                   className="object-cover"
@@ -58,7 +59,7 @@ export default function AboutPage() {
         <div className="editorial-container text-center max-w-4xl mx-auto">
           <FadeIn>
             <Image
-              src="/images/logos/saola-symbol-orange.png"
+              src={basePath("/images/logos/saola-symbol-orange.png")}
               alt="Saola"
               width={32}
               height={32}
@@ -82,10 +83,10 @@ export default function AboutPage() {
             <FadeIn>
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative aspect-[3/4] overflow-hidden">
-                  <Image src="/images/brand/page-22.png" alt="Heritage craft" fill className="object-cover" sizes="25vw" />
+                  <Image src={basePath("/images/brand/page-22.png")} alt="Heritage craft" fill className="object-cover" sizes="25vw" />
                 </div>
                 <div className="relative aspect-[3/4] overflow-hidden mt-8">
-                  <Image src="/images/brand/page-23.png" alt="Design process" fill className="object-cover" sizes="25vw" />
+                  <Image src={basePath("/images/brand/page-23.png")} alt="Design process" fill className="object-cover" sizes="25vw" />
                 </div>
               </div>
             </FadeIn>

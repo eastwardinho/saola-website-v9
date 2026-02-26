@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { FadeIn } from "@/components/FadeIn";
 import { collections } from "@/data/collections";
+import { basePath } from "@/lib/utils";
 
 export default function CollectionsPage() {
   return (
@@ -33,7 +34,7 @@ export default function CollectionsPage() {
                 <div className={"grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center" + (isReversed ? " md:direction-rtl" : "")}>
                   <Link href={"/collections/" + collection.slug + "/"} className={"group block relative aspect-[4/5] overflow-hidden" + (isReversed ? " md:order-2" : "")}>
                     <Image
-                      src={collection.heroImage}
+                      src={basePath(collection.heroImage)}
                       alt={collection.name}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"

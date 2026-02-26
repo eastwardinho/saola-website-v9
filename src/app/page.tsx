@@ -7,6 +7,7 @@ import { FadeIn } from "@/components/FadeIn";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ProductCard } from "@/components/ProductCard";
 import { collections } from "@/data/collections";
+import { basePath } from "@/lib/utils";
 
 export default function Home() {
   const featuredCollection = collections[3]; // Pretty & Posh
@@ -18,7 +19,7 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/products/220217-lotus.3.jpg"
+            src={basePath("/images/products/220217-lotus.3.jpg")}
             alt="Saola Lotus Lamp"
             fill
             className="object-cover"
@@ -68,7 +69,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto text-center">
             <FadeIn>
               <Image
-                src="/images/logos/saola-symbol-orange.png"
+                src={basePath("/images/logos/saola-symbol-orange.png")}
                 alt="Saola symbol"
                 width={40}
                 height={40}
@@ -149,7 +150,7 @@ export default function Home() {
             <FadeIn>
               <div className="relative aspect-[4/5] overflow-hidden">
                 <Image
-                  src="/images/brand/page-20.png"
+                  src={basePath("/images/brand/page-20.png")}
                   alt="Saola Brand"
                   fill
                   className="object-cover"

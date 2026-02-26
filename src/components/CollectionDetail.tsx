@@ -7,6 +7,7 @@ import { FadeIn } from "@/components/FadeIn";
 import { ProductCard } from "@/components/ProductCard";
 import { collections } from "@/data/collections";
 import { Collection } from "@/data/types";
+import { basePath } from "@/lib/utils";
 
 export function CollectionDetail({ collection }: { collection: Collection }) {
   const currentSlug = collection.slug;
@@ -18,7 +19,7 @@ export function CollectionDetail({ collection }: { collection: Collection }) {
     <>
       <section className="relative min-h-[70vh] flex items-end">
         <div className="absolute inset-0 z-0">
-          <Image src={collection.heroImage} alt={collection.name} fill className="object-cover" priority />
+          <Image src={basePath(collection.heroImage)} alt={collection.name} fill className="object-cover" priority />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
         </div>
         <div className="editorial-container relative z-10 pb-16 pt-32">
@@ -58,7 +59,7 @@ export function CollectionDetail({ collection }: { collection: Collection }) {
               return (
                 <FadeIn key={c.id} delay={i * 0.1}>
                   <Link href={"/collections/" + c.slug + "/"} className="group block relative aspect-[4/3] overflow-hidden">
-                    <Image src={c.heroImage} alt={c.name} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
+                    <Image src={basePath(c.heroImage)} alt={c.name} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-6">
                       <h3 className="font-serif text-xl text-white">{c.name}</h3>
